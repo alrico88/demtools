@@ -23,9 +23,9 @@ The DEM file format is not very efficient to work with, due to huge files.  Conv
 The `dem2png` utility takes a DEM file as its input, and creates a PNG file, where elevation in represented as a grayscale value between `0,0,0` and `255,255,255`, where `0,0,0` represents the lowest elevation in the map, and `255,255,255` the highest.
 
 ### dem2dat
-The `dem2dat` utility also takes a DEM file as its input, but creates a DAT (binary) file, where elevation are represented as an unsigned byte, where `0x00` represents the lowest elevation in the map, and `0xff` the highest.
+The `dem2dat` utility also takes a DEM file as its input, but creates a binary file, where each (unsigned) byte represents an elevation sample. `0x00` represents the lowest elevation in the map, and `0xff` the highest.
 
-Both `dem2png` and `dem2dat` will also generate a metadata file.  An example of a metadata file:
+Both `dem2png` and `dem2dat` will also output a metadata file.  An example of the contents of a metadata file:
 
 ```
 z: 33
@@ -46,8 +46,8 @@ The metadata file contains the following information derived from the DEM file:
 
  - The UTM zone.
  - The width and height in samples.
- - The corner coordinates (in UTM).
- - Minimum and maximum elevations,
+ - The corner coordinates (in UTM, as easting/northing pairs).
+ - Minimum and maximum elevations.
  - The spatial resolutions.
 
 ## Author
