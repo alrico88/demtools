@@ -1,0 +1,23 @@
+{
+  "name": "demtools",
+  "version": "0.0.1",
+  "description": "Tools to process DEM files",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "DEM"
+  ],
+  "author": "wvesteraas@gmail.com",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "dem2png": "dem2png.js",
+    "dem2dat": "dem2dat.js"
+  },
+  "dependencies": {
+    "async": "^2.0.0-rc.3",
+    "node-png": "^0.4.3",
+    "optimist": "^0.6.1"
+  }
+}
